@@ -1,0 +1,101 @@
+﻿@{
+    Layout = "_Layout";
+    var currentuser = Context.Items["UserInfo"] as CurrentUserModel;
+}
+<script src="~/js/host.js" type="text/javascript" asp-append-version="true"></script>
+<script src="~/js/api.js" type="text/javascript" asp-append-version="true"></script>
+<script src="~/js/jsApp/walletManagement.js" type="text/javascript" asp-append-version="true"></script>
+<script src="~/js/common.js" type="text/javascript" asp-append-version="true"></script>
+<script src="~/js/constant.js" type="text/javascript" asp-append-version="true"></script>
+<div class="main-container">
+    <input type="hidden" id="IdUser" name="Id" value=@currentuser.Id />
+    <div class="pd-ltr-20">
+        <div class="card" id="view">
+            <div class="card-header bg-primary text-white" style=" font-size: 1rem; ">
+                Quản lý Ví
+            </div>
+            <div class="card-body card-custom">
+                <form id="formView" action="javascript:void(0)">
+                    <div style="padding: 15px 0px;">
+                        <a href="javascript:void(0);" onclick="openModal()" class="btn btn-info">Thêm mới</a>
+                    </div>
+                    <div class="form-group row" id="CountWallet">
+                        <div class="col-xl-3 col-lg-3 col-md-3 col-3">
+                            <label for="walletlable1" class="col-sm-12 col-form-label">Tổng số ví:</label>
+                            @*<label for="walletcount1" class="col-sm-7 col-form-label"></label>*@
+                        </div>
+                        <div class="col-xl-3 col-lg-3 col-md-3 col-3">
+                            <label for="walletlable2" class="col-sm-12 col-form-label">Ví đã chọn:</label>
+                            @*<label for="walletcount2" class="col-sm-7 col-form-label"></label>*@
+                        </div>
+                    </div>
+                </form>
+                <div class="table-responsive custom-table-scroll">
+                    <table id="walletTable" class="table table-striped table-bordered zero-configuration" style="width:100%">
+                        <thead class="contain-header-custom m-gray">
+                            <tr>
+                                <th class="sorting" style="text-align: center">STT</th>
+                                <th class="sorting" style="text-align: center">Địa chỉ ví</th>
+                                <th class="sorting" style="text-align: center">TAU</th>
+                                <th class="sorting" style="text-align: center">BNB</th>
+                                <th class="sorting" style="text-align: center">Lựa chọn</th>
+                                <th style="text-align: center">Thao tác</th>
+                            </tr>
+                        </thead>
+                        <tbody class="contain-tbody-custom">
+                        </tbody>
+                    </table>
+                </div>
+                <div class="row">
+                    <div class="col-md-7"></div>
+                    <div class="col-md-5">
+                        <partial name="_Pagination" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal hide fade" id="modalCreateWallet" role="dialog" aria-labelledby="modalCreateWalletLabel" aria-hidden="true">
+    <div class="modal-dialog modal-md" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalCreateWallet">Thêm ví</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group row">
+                    <label for="PrivateKey" class="col-sm-3 col-form-label">Private key:</label>
+                    <div class="col-sm-9">
+                        <input type="text" class="form-control" id="PrivateKey" aria-label="PrivateKey" aria-describedby="basic-addon1">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="AddressWallet" class="col-sm-3 col-form-label">Địa chỉ ví:</label>
+                    <div class="col-sm-9">
+                        <input type="text" class="form-control" id="AddressWallet" aria-label="AddressWallet" aria-describedby="basic-addon1">
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <a href="javascript:void(0);" class="btn btn-info" onclick="CreateWallet()">Thêm</a>
+                <a href="javascript:void(0);" class="btn btn-secondary" data-dismiss="modal">Trở lại</a>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    function openModal() {
+        $('#modalCreateWallet').modal('show');
+        $('#PrivateKey').val("");
+        $('#AddressWallet').val("");
+    }
+    $(".modal").on("shown.bs.modal", function () {
+        if ($(".modal-backdrop").length > 1) {
+            $(".modal-backdrop").remove();
+        }
+    })
+    onSearch();
+</script>

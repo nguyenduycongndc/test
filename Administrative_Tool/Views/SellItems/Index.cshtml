@@ -1,0 +1,127 @@
+﻿@{
+    Layout = "_Layout";
+    var currentuser = Context.Items["UserInfo"] as CurrentUserModel;
+}
+@*<script src="/js/jquery/jquery/jquery.min.js"></script>*@
+<script src="~/js/select2/js/select2.js"></script>
+
+<script src="~/js/host.js" type="text/javascript" asp-append-version="true"></script>
+<script src="~/js/api.js" type="text/javascript" asp-append-version="true"></script>
+<script src="~/js/jsApp/SellItems.js" type="text/javascript" asp-append-version="true"></script>
+<script src="~/js/common.js" type="text/javascript" asp-append-version="true"></script>
+<script src="~/js/constant.js" type="text/javascript" asp-append-version="true"></script>
+
+<div class="main-container">
+    <div class="pd-ltr-20">
+        <div class="card" id="view">
+            <div class="card-header bg-primary text-white" style=" font-size: 1rem; ">
+                Quản lý tài khoản
+            </div>
+            <div class="card-body card-custom">
+                <form id="formView" action="javascript:void(0)">
+                    <div class="col-md-12 row">
+                        <div class="col-md-6 mb-3">
+                            <div class="form-group row">
+                                <label class="col-form-label col-lg-2" for="type">
+                                    Phân loại
+                                </label>
+                                <div class="col-lg-10">
+                                    <select class="form-control" id="type">
+                                        <option value="-1">Tất cả</option>
+                                        <option value="Hero">Hero</option>
+                                        <option value="Trứng">Trứng</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <div class="form-group row">
+                                <label class="col-form-label col-lg-2" for="rarity">
+                                    Độ hiếm
+                                </label>
+                                <div class="col-lg-10">
+                                    <select class="form-control" id="rarity">
+                                        <option value="-1">Tất cả</option>
+                                        <option value="Common">Common</option>
+                                        <option value="UnCommon">UnCommon</option>
+                                        <option value="Rare">Rare</option>
+                                        <option value="Epic">Epic</option>
+                                        <option value="Lengend">Lengend</option>
+                                        <option value="Mythic">Mythic</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <div class="form-group row">
+                                <label class="col-form-label col-lg-2" for="IsActive">
+                                    Trạng thái
+                                </label>
+                                <div class="col-lg-10">
+                                    <select class="form-control" id="IsActive">
+                                        <option value="-1">Tất cả</option>
+                                        <option value="Túi">Túi</option>
+                                        <option value="Chợ">Chợ</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <div class="form-group row">
+                                <label class="col-form-label col-lg-2" for="Wallet">
+                                    Ví
+                                </label>
+                                <div class="col-lg-10">
+                                    <select class="form-control" id="Wallet">
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-12 mb-3 btn-search-custom">
+                        <div style="text-align:center; ">
+                            <a href="javascript:void(0)" class="btn btn-info" onclick="onSearch()">Tìm kiếm</a>
+                        </div>
+                    </div>
+                    @*</div>*@
+                </form>
+                <div class="table-responsive custom-table-scroll">
+                    <table id="sellTable" class="table table-striped table-bordered zero-configuration" style="width:100%">
+                        <thead class="contain-header-custom m-gray">
+                            <tr>
+                                <th class="sorting" style="text-align: center">STT</th>
+                                <th class="sorting" style="text-align: center">ID</th>
+                                <th class="sorting" style="text-align: center">Phân loại</th>
+                                <th class="sorting" style="text-align: center">Độ hiếm</th>
+                                <th class="sorting" style="text-align: center">Giá(TAU)</th>
+                                <th class="sorting" style="text-align: center">Giá($)</th>
+                                <th class="sorting" style="text-align: center">Ví</th>
+                                <th class="sorting" style="text-align: center">Trạng thái</th>
+                                <th class="sorting" style="text-align: center">Hoạt động</th>
+                                <th class="sorting" style="text-align: center">Giá Bán (TAU)</th>
+                                <th style="text-align: center">Chọn</th>
+                            </tr>
+                        </thead>
+                        <tbody class="contain-tbody-custom">
+                        </tbody>
+                    </table>
+                </div>
+                <div class="row">
+                    <div class="col-md-7"></div>
+                    <div class="col-md-5">
+                        <partial name="_Pagination" />
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<script>
+    callApi_oneselect("Wallet", "Chọn ví...",
+        apiConfig.api.host_user_service,
+        apiConfig.api.sellitem.controller,
+        apiConfig.api.sellitem.action.dropdown.path);
+</script>

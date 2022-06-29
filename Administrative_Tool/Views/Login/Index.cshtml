@@ -1,0 +1,112 @@
+﻿@{
+    Layout = "_LayoutLogin";
+
+}
+<link rel="stylesheet" type="text/css" href="~/css/login.css">
+<div class="container-fluid">
+    <div class=" col-md-4 col-sm-8 col-10 offset-md-4 offset-sm-2 offset-1 radius-form bg-white mb-5 " style="background: radial-gradient(circle, var(--indigo) 0%, rgb(232 62 140 / 32%) 100%); border-radius: 25px;">
+        <div class="row mt-5">
+            <h2 class="col-md-12 col-sm-12 col-12 mt-3" style="text-align:center">Đăng Nhập</h2>
+        </div>
+        @*Tài khoản*@
+        <div class="input-icons mt-4" id="input-container">
+            <input type="text" class="form-control inputLogin mb-4" style="border-radius:30px" id="UserName" placeholder="Tài khoản" name="" />
+            <i class="fa fa-user absolute-icon-calendar"></i>
+        </div>
+        @*Mật khẩu*@
+        <div class="input-icons" id="input-container">
+            <input type="password" class="form-control inputLogin mb-4" style="border-radius:30px" @*onchange="SubmitLogin();"*@ placeholder="Mật khẩu" id="Password" />
+            <i class="fa fa-unlock absolute-icon-calendar "></i>
+        </div>
+        @*Nút đăng nhập*@
+        <div class="row">
+            <div class="col-md-12 col-sm-12 col-12 mt-2 mb-3">
+                <button class="btn btn-block btnLogin btn btn-primary" id="btnLogin" @*onclick="Login()"*@>Đăng nhập</button>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="~/js/common.js" type="text/javascript" asp-append-version="true"></script>
+@*<script src="~/js/jquery-3.6.0.min.js"></script>*@
+<script>
+    //function Login() {
+    //    $.ajax({
+    //        type: "POST",
+    //        url: '/Login/LoginRevamp',
+    //        success: function (response) {
+    //            
+    //            alert(response);
+    //        },
+    //        error: function (result) {
+    //            
+    //        }
+    //    });
+    //};
+    $("#btnLogin").click(function () {
+        localStorage.clear();
+        sessionStorage.clear();
+        showLoading();
+        SubmitLogin();
+    });
+    //function showLoading() {
+    //    $('#preloader').css('display', 'block');
+    //}
+    //function hideLoading() {
+    //    $('#preloader').css('display', 'none');
+    //}
+    function SubmitLogin() {
+        var formdata;
+        formdata = {
+            'UserName': $('#UserName').val(),
+            'Password': $('#Password').val(),
+        }
+        
+        $.ajax({
+            url: 'Login/LoginUser',
+            type: 'POST',
+            dataType: 'json',
+            contentType: "application/json; charset=utf-8",
+            data: JSON.stringify(formdata),
+            success: function (result) {
+                
+                if (!result) {
+                    swal("Thông báo!", "Tài khoản/Mật khẩu chưa đúng!", "warning");
+                    hideLoading();
+                } else {
+                    sessionStorage['SessionToken'] = result.token;
+                    sessionStorage['UserName'] = result.userName;
+                    hideLoading();
+                    window.location.href = "/Home";
+                    //window.location.href = "api/Home";
+                    //HomeData();
+                }
+            },
+            error: function (ex) {
+                /*AlertLogin(ex.responseText);*/
+                //console.error('Error:', error);
+                swal("Thông báo!", "Tài khoản/Mật khẩu chưa đúng!", "warning");
+                hideLoading();
+            }
+        });
+    };
+    //function GetMenu() {
+    //    $.ajax({
+    //        type: "GET",
+    //        url: apiConfig.api.host_user_service + apiConfig.api.roles.controller + apiConfig.api.roles.action.rendermenu.path,
+    //        headers: { 'Authorization': getSessionToken() },
+    //        success: function (data) {
+    //            fetch('/Login/MenuComponent', {
+    //                method: 'POST',
+    //                headers: {
+    //                    'Accept': 'application/json',
+    //                    'Content-Type': 'application/json'
+    //                },
+    //                body: JSON.stringify(data),
+    //            })
+    //                .then(response => response.json())
+    //                .then(result => {
+    //                    window.location.href = "/";
+    //                })
+    //        }
+    //    });
+</script>

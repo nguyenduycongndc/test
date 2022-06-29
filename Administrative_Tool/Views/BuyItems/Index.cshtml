@@ -1,0 +1,1203 @@
+﻿@{
+    Layout = "_Layout";
+    var currentuser = Context.Items["UserInfo"] as CurrentUserModel;
+}
+<script src="~/js/host.js" type="text/javascript" asp-append-version="true"></script>
+<script src="~/js/api.js" type="text/javascript" asp-append-version="true"></script>
+<script src="~/js/jsApp/BuyItem.js" type="text/javascript" asp-append-version="true"></script>
+<script src="~/js/common.js" type="text/javascript" asp-append-version="true"></script>
+<script src="~/js/constant.js" type="text/javascript" asp-append-version="true"></script>
+<div class="main-container">
+    <input type="hidden" id="IdUser" name="Id" value=@currentuser.Id />
+    <div class="pd-ltr-20">
+        <div class="card" id="view">
+            <div class="card-header bg-primary text-white" style=" font-size: 1rem; ">
+                Mua NFT
+            </div>
+            <div class="contact-directory-list">
+                <ul class="row">
+                    <li class="col-xl-3 col-lg-3 col-md-5 col-sm-12">
+                        <div class="contact-directory-box">
+                            <div class="contact-dire-info text-center">
+                                <h4>Trứng</h4>
+                                <div class="form-group row">
+                                    <div class="col-sm-5">
+                                        <label>Rarity</label>
+                                    </div>
+                                    <div class="col-sm-7">
+                                        <label>Giá</label>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <div class="col-md-1" style="margin:auto"><input type="checkbox" id="checkbox1"/></div>
+                                    <label for="PrivateKey" class="col-md-4 col-form-label" style="margin:auto">Common</label>
+                                    <div class="col-md-6">
+                                        <input type="text" class="form-control" id="Zen1" aria-label="Zen1" aria-describedby="basic-addon1" onkeypress='validate(event)'>
+                                    </div>
+                                    <label style="margin:auto">$</label>
+                                </div>
+                                <div class="form-group row">
+                                    <div class="col-md-1" style="margin:auto"><input type="checkbox" id="checkbox2" /></div>
+                                    <label for="PrivateKey" class="col-md-4 col-form-label" style="margin:auto">UnCommon</label>
+                                    <div class="col-md-6">
+                                        <input type="text" class="form-control" id="Zen2" aria-label="Zen2" aria-describedby="basic-addon1" onkeypress='validate(event)'>
+                                    </div>
+                                    <label style="margin:auto">$</label>
+                                </div>
+                                <div class="form-group row">
+                                    <div class="col-md-1" style="margin:auto"><input type="checkbox" id="checkbox3" /></div>
+                                    <label for="PrivateKey" class="col-md-4 col-form-label" style="margin:auto">Rare</label>
+                                    <div class="col-md-6">
+                                        <input type="text" class="form-control" id="Zen3" aria-label="Zen3" aria-describedby="basic-addon1" onkeypress='validate(event)'>
+                                    </div>
+                                    <label style="margin:auto">$</label>
+                                </div>
+                                <div class="form-group row">
+                                    <div class="col-md-1" style="margin:auto"><input type="checkbox" id="checkbox4" /></div>
+                                    <label for="PrivateKey" class="col-md-4 col-form-label" style="margin:auto">Epic</label>
+                                    <div class="col-md-6">
+                                        <input type="text" class="form-control" id="Zen4" aria-label="Zen4" aria-describedby="basic-addon1" onkeypress='validate(event)'>
+                                    </div>
+                                    <label style="margin:auto">$</label>
+                                </div>
+                                <div class="form-group row">
+                                    <div class="col-md-1" style="margin:auto"><input type="checkbox" id="checkbox5" /></div>
+                                    <label for="PrivateKey" class="col-md-4 col-form-label" style="margin:auto">Lengend</label>
+                                    <div class="col-md-6">
+                                        <input type="text" class="form-control" id="Zen5" aria-label="Zen5" aria-describedby="basic-addon1" onkeypress='validate(event)'>
+                                    </div>
+                                    <label style="margin:auto">$</label>
+                                </div>
+                                <div class="form-group row">
+                                    <div class="col-md-1" style="margin:auto"><input type="checkbox" id="checkbox6" /></div>
+                                    <label for="PrivateKey" class="col-md-4 col-form-label" style="margin:auto">Mythic</label>
+                                    <div class="col-md-6">
+                                        <input type="text" class="form-control" id="Zen6" aria-label="Zen6" aria-describedby="basic-addon1" onkeypress='validate(event)'>
+                                    </div>
+                                    <label style="margin:auto">$</label>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="col-xl-9 col-lg-9 col-md-7 col-sm-12">
+                        <div class="contact-directory-box">
+                            <div class="contact-dire-info text-center">
+                                <h4>Hero</h4>
+                            </div>
+                            <div class="accordion" id="accordionExample">
+                                <div class="card">
+                                    <div class="card-header" id="heading1">
+                                        <button class="btn collapsed" data-toggle="collapse" data-target="#collapse1" aria-expanded="false" aria-controls="collapse1">
+                                            <i class="fa fa-plus"></i>&emsp;Common
+                                        </button>
+                                    </div>
+                                    <div id="collapse1" class="collapse" aria-labelledby="heading1" data-parent="#accordionExample">
+                                        <div class="card-body">
+                                            <div class="form-group row">
+                                                <div class="col-md-7 row">
+                                                    <div class="col-md-5">
+                                                    </div>
+                                                    <div class="col-md-7 text-center">
+                                                        <label>Giá</label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-5 row">
+                                                    <div class="col-md-5">
+                                                    </div>
+                                                    <div class="col-md-7 text-center">
+                                                        <label>Giá</label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-7 col-sm-7 col-lg-7 row">
+                                                    <div class="col-md-5 row">
+                                                        <div class="col-md-7">
+                                                            <input type="checkbox" id="checkbox000" />&emsp;<label style="margin: auto" for="PrivateKey">Common</label>
+                                                        </div>
+                                                        <div class="col-md-5">
+                                                            <input class="col-md-3" type="checkbox" id="checkboxsex001" />&emsp;<label for="PrivateKey" style="margin:auto">Đực</label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-7">
+                                                        <div class="form-group row">
+                                                            <div class="col-md-5">
+                                                                <input class="col-md-3" type="checkbox" id="checkboxsex002" />&emsp;<label for="PrivateKey" style="margin:auto">0/5</label>
+                                                            </div>
+                                                            <div class="col-md-5" style="margin:auto; bottom: 20px">
+                                                                <input class="form-control" type="text" id="Zen000" aria-label="Zen000" aria-describedby="basic-addon1" onkeypress='validate(event)'>
+                                                            </div>
+                                                            <div class="col-md-1">
+                                                                <label for="PrivateKey" style="margin:auto">$</label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group row">
+                                                            <div class="col-md-5">
+                                                                <input class="col-md-3" type="checkbox" id="checkboxsex003" />&emsp;<label for="PrivateKey" style="margin:auto">1/5</label>
+                                                            </div>
+                                                            <div class="col-md-5" style="margin:auto; bottom: 20px">
+                                                                <input class="form-control" type="text" id="Zen001" aria-label="Zen001" aria-describedby="basic-addon1" onkeypress='validate(event)'>
+                                                            </div>
+                                                            <div class="col-md-1">
+                                                                <label for="PrivateKey" style="margin:auto">$</label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group row">
+                                                            <div class="col-md-5">
+                                                                <input class="col-md-3" type="checkbox" id="checkboxsex004" />&emsp;<label for="PrivateKey" style="margin:auto">2/5</label>
+                                                            </div>
+                                                            <div class="col-md-5" style="margin:auto; bottom: 20px">
+                                                                <input class="form-control" type="text" id="Zen002" aria-label="Zen002" aria-describedby="basic-addon1" onkeypress='validate(event)'>
+                                                            </div>
+                                                            <div class="col-md-1">
+                                                                <label for="PrivateKey" style="margin:auto">$</label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group row">
+                                                            <div class="col-md-5">
+                                                                <input class="col-md-3" type="checkbox" id="checkboxsex005" />&emsp;<label for="PrivateKey" style="margin:auto">3/5</label>
+                                                            </div>
+                                                            <div class="col-md-5" style="margin:auto; bottom: 20px">
+                                                                <input class="form-control" type="text" id="Zen003" aria-label="Zen003" aria-describedby="basic-addon1" onkeypress='validate(event)'>
+                                                            </div>
+                                                            <div class="col-md-1">
+                                                                <label for="PrivateKey" style="margin:auto">$</label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group row">
+                                                            <div class="col-md-5">
+                                                                <input class="col-md-3" type="checkbox" id="checkboxsex006" />&emsp;<label for="PrivateKey" style="margin:auto">4/5</label>
+                                                            </div>
+                                                            <div class="col-md-5" style="margin:auto; bottom: 20px">
+                                                                <input class="form-control" type="text" id="Zen004" aria-label="Zen004" aria-describedby="basic-addon1" onkeypress='validate(event)'>
+                                                            </div>
+                                                            <div class="col-md-1">
+                                                                <label for="PrivateKey" style="margin:auto">$</label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group row">
+                                                            <div class="col-md-5">
+                                                                <input class="col-md-3" type="checkbox" id="checkboxsex007" />&emsp;<label for="PrivateKey" style="margin:auto">5/5</label>
+                                                            </div>
+                                                            <div class="col-md-5" style="margin:auto; bottom: 20px">
+                                                                <input class="form-control" type="text" id="Zen005" aria-label="Zen005" aria-describedby="basic-addon1" onkeypress='validate(event)'>
+                                                            </div>
+                                                            <div class="col-md-1">
+                                                                <label for="PrivateKey" style="margin:auto">$</label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-5 col-sm-5 col-lg-5 row">
+                                                    <div class="col-md-3">
+                                                        <input class="col-md-3" type="checkbox" id="checkboxsex008" />&emsp;<label for="PrivateKey" style="margin:auto">Cái</label>
+                                                    </div>
+                                                    <div class="col-md-9">
+                                                        <div class="form-group row">
+                                                            <div class="col-md-5">
+                                                                <input class="col-md-3" type="checkbox" id="checkboxsex009" />&emsp;<label for="PrivateKey" style="margin:auto">0/5</label>
+                                                            </div>
+                                                            <div class="col-md-5" style="margin:auto; bottom: 20px">
+                                                                <input class="form-control" type="text" id="Zen006" aria-label="Zen006" aria-describedby="basic-addon1" onkeypress='validate(event)'>
+                                                            </div>
+                                                            <div class="col-md-1">
+                                                                <label for="PrivateKey" style="margin:auto">$</label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group row">
+                                                            <div class="col-md-5">
+                                                                <input class="col-md-3" type="checkbox" id="checkboxsex010" />&emsp;<label for="PrivateKey" style="margin:auto">1/5</label>
+                                                            </div>
+                                                            <div class="col-md-5" style="margin:auto; bottom: 20px">
+                                                                <input class="form-control" type="text" id="Zen007" aria-label="Zen007" aria-describedby="basic-addon1" onkeypress='validate(event)'>
+                                                            </div>
+                                                            <div class="col-md-1">
+                                                                <label for="PrivateKey" style="margin:auto">$</label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group row">
+                                                            <div class="col-md-5">
+                                                                <input class="col-md-3" type="checkbox" id="checkboxsex011" />&emsp;<label for="PrivateKey" style="margin:auto">2/5</label>
+                                                            </div>
+                                                            <div class="col-md-5" style="margin:auto; bottom: 20px">
+                                                                <input class="form-control" type="text" id="Zen008" aria-label="Zen008" aria-describedby="basic-addon1" onkeypress='validate(event)'>
+                                                            </div>
+                                                            <div class="col-md-1">
+                                                                <label for="PrivateKey" style="margin:auto">$</label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group row">
+                                                            <div class="col-md-5">
+                                                                <input class="col-md-3" type="checkbox" id="checkboxsex012" />&emsp;<label for="PrivateKey" style="margin:auto">3/5</label>
+                                                            </div>
+                                                            <div class="col-md-5" style="margin:auto; bottom: 20px">
+                                                                <input class="form-control" type="text" id="Zen009" aria-label="Zen009" aria-describedby="basic-addon1" onkeypress='validate(event)'>
+                                                            </div>
+                                                            <div class="col-md-1">
+                                                                <label for="PrivateKey" style="margin:auto">$</label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group row">
+                                                            <div class="col-md-5">
+                                                                <input class="col-md-3" type="checkbox" id="checkboxsex013" />&emsp;<label for="PrivateKey" style="margin:auto">4/5</label>
+                                                            </div>
+                                                            <div class="col-md-5" style="margin:auto; bottom: 20px">
+                                                                <input class="form-control" type="text" id="Zen010" aria-label="Zen010" aria-describedby="basic-addon1" onkeypress='validate(event)'>
+                                                            </div>
+                                                            <div class="col-md-1">
+                                                                <label for="PrivateKey" style="margin:auto">$</label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group row">
+                                                            <div class="col-md-5">
+                                                                <input class="col-md-3" type="checkbox" id="checkboxsex014" />&emsp;<label for="PrivateKey" style="margin:auto">5/5</label>
+                                                            </div>
+                                                            <div class="col-md-5" style="margin:auto; bottom: 20px">
+                                                                <input class="form-control" type="text" id="Zen011" aria-label="Zen011" aria-describedby="basic-addon1" onkeypress='validate(event)'>
+                                                            </div>
+                                                            <div class="col-md-1">
+                                                                <label for="PrivateKey" style="margin:auto">$</label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <div class="card-header" id="heading2">
+                                        <button class="btn collapsed" type="button" data-toggle="collapse" data-target="#collapse2" aria-expanded="false" aria-controls="collapse2">
+                                            <i class="fa fa-plus"></i>&emsp;UnCommon
+                                        </button>
+                                    </div>
+                                    <div id="collapse2" class="collapse" aria-labelledby="heading2" data-parent="#accordionExample">
+                                        <div class="card-body">
+                                            <div class="form-group row">
+                                                <div class="col-md-7 row">
+                                                    <div class="col-md-5">
+                                                    </div>
+                                                    <div class="col-md-7 text-center">
+                                                        <label>Giá</label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-5 row">
+                                                    <div class="col-md-5">
+                                                    </div>
+                                                    <div class="col-md-7 text-center">
+                                                        <label>Giá</label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-7 col-sm-7 col-lg-7 row">
+                                                    <div class="col-md-6 row">
+                                                        <div class="col-md-7">
+                                                            <input type="checkbox" id="checkbox100" />&emsp;<label style="margin: auto" for="PrivateKey">UnCommon</label>
+                                                        </div>
+                                                        <div class="col-md-5">
+                                                            <input class="col-md-3" type="checkbox" id="checkboxsex101" />&emsp;<label for="PrivateKey" style="margin:auto">Đực</label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <div class="form-group row">
+                                                            <div class="col-md-5">
+                                                                <input class="col-md-3" type="checkbox" id="checkboxsex102" />&emsp;<label for="PrivateKey" style="margin:auto">0/5</label>
+                                                            </div>
+                                                            <div class="col-md-5" style="margin:auto; bottom: 20px">
+                                                                <input class="form-control" type="text" id="Zen100" aria-label="Zen100" aria-describedby="basic-addon1" onkeypress='validate(event)'>
+                                                            </div>
+                                                            <div class="col-md-1">
+                                                                <label for="PrivateKey" style="margin:auto">$</label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group row">
+                                                            <div class="col-md-5">
+                                                                <input class="col-md-3" type="checkbox" id="checkboxsex103" />&emsp;<label for="PrivateKey" style="margin:auto">1/5</label>
+                                                            </div>
+                                                            <div class="col-md-5" style="margin:auto; bottom: 20px">
+                                                                <input class="form-control" type="text" id="Zen101" aria-label="Zen101" aria-describedby="basic-addon1" onkeypress='validate(event)'>
+                                                            </div>
+                                                            <div class="col-md-1">
+                                                                <label for="PrivateKey" style="margin:auto">$</label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group row">
+                                                            <div class="col-md-5">
+                                                                <input class="col-md-3" type="checkbox" id="checkboxsex104" />&emsp;<label for="PrivateKey" style="margin:auto">2/5</label>
+                                                            </div>
+                                                            <div class="col-md-5" style="margin:auto; bottom: 20px">
+                                                                <input class="form-control" type="text" id="Zen102" aria-label="Zen102" aria-describedby="basic-addon1" onkeypress='validate(event)'>
+                                                            </div>
+                                                            <div class="col-md-1">
+                                                                <label for="PrivateKey" style="margin:auto">$</label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group row">
+                                                            <div class="col-md-5">
+                                                                <input class="col-md-3" type="checkbox" id="checkboxsex105" />&emsp;<label for="PrivateKey" style="margin:auto">3/5</label>
+                                                            </div>
+                                                            <div class="col-md-5" style="margin:auto; bottom: 20px">
+                                                                <input class="form-control" type="text" id="Zen103" aria-label="Zen103" aria-describedby="basic-addon1" onkeypress='validate(event)'>
+                                                            </div>
+                                                            <div class="col-md-1">
+                                                                <label for="PrivateKey" style="margin:auto">$</label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group row">
+                                                            <div class="col-md-5">
+                                                                <input class="col-md-3" type="checkbox" id="checkboxsex106" />&emsp;<label for="PrivateKey" style="margin:auto">4/5</label>
+                                                            </div>
+                                                            <div class="col-md-5" style="margin:auto; bottom: 20px">
+                                                                <input class="form-control" type="text" id="Zen104" aria-label="Zen104" aria-describedby="basic-addon1" onkeypress='validate(event)'>
+                                                            </div>
+                                                            <div class="col-md-1">
+                                                                <label for="PrivateKey" style="margin:auto">$</label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group row">
+                                                            <div class="col-md-5">
+                                                                <input class="col-md-3" type="checkbox" id="checkboxsex107" />&emsp;<label for="PrivateKey" style="margin:auto">5/5</label>
+                                                            </div>
+                                                            <div class="col-md-5" style="margin:auto; bottom: 20px">
+                                                                <input class="form-control" type="text" id="Zen105" aria-label="Zen105" aria-describedby="basic-addon1" onkeypress='validate(event)'>
+                                                            </div>
+                                                            <div class="col-md-1">
+                                                                <label for="PrivateKey" style="margin:auto">$</label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-5 col-sm-5 col-lg-5 row">
+                                                    <div class="col-md-3">
+                                                        <input class="col-md-3" type="checkbox" id="checkboxsex108" />&emsp;<label for="PrivateKey" style="margin:auto">Cái</label>
+                                                    </div>
+                                                    <div class="col-md-9">
+                                                        <div class="form-group row">
+                                                            <div class="col-md-5">
+                                                                <input class="col-md-3" type="checkbox" id="checkboxsex109" />&emsp;<label for="PrivateKey" style="margin:auto">0/5</label>
+                                                            </div>
+                                                            <div class="col-md-5" style="margin:auto; bottom: 20px">
+                                                                <input class="form-control" type="text" id="Zen106" aria-label="Zen106" aria-describedby="basic-addon1" onkeypress='validate(event)'>
+                                                            </div>
+                                                            <div class="col-md-1">
+                                                                <label for="PrivateKey" style="margin:auto">$</label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group row">
+                                                            <div class="col-md-5">
+                                                                <input class="col-md-3" type="checkbox" id="checkboxsex110" />&emsp;<label for="PrivateKey" style="margin:auto">1/5</label>
+                                                            </div>
+                                                            <div class="col-md-5" style="margin:auto; bottom: 20px">
+                                                                <input class="form-control" type="text" id="Zen107" aria-label="Zen107" aria-describedby="basic-addon1" onkeypress='validate(event)'>
+                                                            </div>
+                                                            <div class="col-md-1">
+                                                                <label for="PrivateKey" style="margin:auto">$</label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group row">
+                                                            <div class="col-md-5">
+                                                                <input class="col-md-3" type="checkbox" id="checkboxsex111" />&emsp;<label for="PrivateKey" style="margin:auto">2/5</label>
+                                                            </div>
+                                                            <div class="col-md-5" style="margin:auto; bottom: 20px">
+                                                                <input class="form-control" type="text" id="Zen108" aria-label="Zen108" aria-describedby="basic-addon1" onkeypress='validate(event)'>
+                                                            </div>
+                                                            <div class="col-md-1">
+                                                                <label for="PrivateKey" style="margin:auto">$</label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group row">
+                                                            <div class="col-md-5">
+                                                                <input class="col-md-3" type="checkbox" id="checkboxsex112" />&emsp;<label for="PrivateKey" style="margin:auto">3/5</label>
+                                                            </div>
+                                                            <div class="col-md-5" style="margin:auto; bottom: 20px">
+                                                                <input class="form-control" type="text" id="Zen109" aria-label="Zen109" aria-describedby="basic-addon1" onkeypress='validate(event)'>
+                                                            </div>
+                                                            <div class="col-md-1">
+                                                                <label for="PrivateKey" style="margin:auto">$</label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group row">
+                                                            <div class="col-md-5">
+                                                                <input class="col-md-3" type="checkbox" id="checkboxsex113" />&emsp;<label for="PrivateKey" style="margin:auto">4/5</label>
+                                                            </div>
+                                                            <div class="col-md-5" style="margin:auto; bottom: 20px">
+                                                                <input class="form-control" type="text" id="Zen110" aria-label="Zen110" aria-describedby="basic-addon1" onkeypress='validate(event)'>
+                                                            </div>
+                                                            <div class="col-md-1">
+                                                                <label for="PrivateKey" style="margin:auto">$</label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group row">
+                                                            <div class="col-md-5">
+                                                                <input class="col-md-3" type="checkbox" id="checkboxsex114" />&emsp;<label for="PrivateKey" style="margin:auto">5/5</label>
+                                                            </div>
+                                                            <div class="col-md-5" style="margin:auto; bottom: 20px">
+                                                                <input class="form-control" type="text" id="Zen111" aria-label="Zen111" aria-describedby="basic-addon1" onkeypress='validate(event)'>
+                                                            </div>
+                                                            <div class="col-md-1">
+                                                                <label for="PrivateKey" style="margin:auto">$</label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <div class="card-header" id="heading3">
+                                        <button class="btn collapsed" type="button" data-toggle="collapse" data-target="#collapse3" aria-expanded="false" aria-controls="collapse3">
+                                            <i class="fa fa-plus"></i>&emsp;Rare
+                                        </button>
+                                    </div>
+                                    <div id="collapse3" class="collapse" aria-labelledby="heading3" data-parent="#accordionExample">
+                                        <div class="card-body">
+                                            <div class="form-group row">
+                                                <div class="col-md-7 row">
+                                                    <div class="col-md-5">
+                                                    </div>
+                                                    <div class="col-md-7 text-center">
+                                                        <label>Giá</label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-5 row">
+                                                    <div class="col-md-5">
+                                                    </div>
+                                                    <div class="col-md-7 text-center">
+                                                        <label>Giá</label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-7 col-sm-7 col-lg-7 row">
+                                                    <div class="col-md-5 row">
+                                                        <div class="col-md-7">
+                                                            <input type="checkbox" id="checkbox200" />&emsp;<label style="margin: auto" for="PrivateKey">Rare</label>
+                                                        </div>
+                                                        <div class="col-md-5">
+                                                            <input class="col-md-3" type="checkbox" id="checkboxsex201" />&emsp;<label for="PrivateKey" style="margin:auto">Đực</label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-7">
+                                                        <div class="form-group row">
+                                                            <div class="col-md-5">
+                                                                <input class="col-md-3" type="checkbox" id="checkboxsex202" />&emsp;<label for="PrivateKey" style="margin:auto">0/5</label>
+                                                            </div>
+                                                            <div class="col-md-5" style="margin:auto; bottom: 20px">
+                                                                <input class="form-control" type="text" id="Zen200" aria-label="Zen200" aria-describedby="basic-addon1" onkeypress='validate(event)'>
+                                                            </div>
+                                                            <div class="col-md-1">
+                                                                <label for="PrivateKey" style="margin:auto">$</label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group row">
+                                                            <div class="col-md-5">
+                                                                <input class="col-md-3" type="checkbox" id="checkboxsex203" />&emsp;<label for="PrivateKey" style="margin:auto">1/5</label>
+                                                            </div>
+                                                            <div class="col-md-5" style="margin:auto; bottom: 20px">
+                                                                <input class="form-control" type="text" id="Zen201" aria-label="Zen201" aria-describedby="basic-addon1" onkeypress='validate(event)'>
+                                                            </div>
+                                                            <div class="col-md-1">
+                                                                <label for="PrivateKey" style="margin:auto">$</label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group row">
+                                                            <div class="col-md-5">
+                                                                <input class="col-md-3" type="checkbox" id="checkboxsex204" />&emsp;<label for="PrivateKey" style="margin:auto">2/5</label>
+                                                            </div>
+                                                            <div class="col-md-5" style="margin:auto; bottom: 20px">
+                                                                <input class="form-control" type="text" id="Zen202" aria-label="Zen202" aria-describedby="basic-addon1" onkeypress='validate(event)'>
+                                                            </div>
+                                                            <div class="col-md-1">
+                                                                <label for="PrivateKey" style="margin:auto">$</label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group row">
+                                                            <div class="col-md-5">
+                                                                <input class="col-md-3" type="checkbox" id="checkboxsex205" />&emsp;<label for="PrivateKey" style="margin:auto">3/5</label>
+                                                            </div>
+                                                            <div class="col-md-5" style="margin:auto; bottom: 20px">
+                                                                <input class="form-control" type="text" id="Zen203" aria-label="Zen203" aria-describedby="basic-addon1" onkeypress='validate(event)'>
+                                                            </div>
+                                                            <div class="col-md-1">
+                                                                <label for="PrivateKey" style="margin:auto">$</label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group row">
+                                                            <div class="col-md-5">
+                                                                <input class="col-md-3" type="checkbox" id="checkboxsex206" />&emsp;<label for="PrivateKey" style="margin:auto">4/5</label>
+                                                            </div>
+                                                            <div class="col-md-5" style="margin:auto; bottom: 20px">
+                                                                <input class="form-control" type="text" id="Zen204" aria-label="Zen204" aria-describedby="basic-addon1" onkeypress='validate(event)'>
+                                                            </div>
+                                                            <div class="col-md-1">
+                                                                <label for="PrivateKey" style="margin:auto">$</label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group row">
+                                                            <div class="col-md-5">
+                                                                <input class="col-md-3" type="checkbox" id="checkboxsex207" />&emsp;<label for="PrivateKey" style="margin:auto">5/5</label>
+                                                            </div>
+                                                            <div class="col-md-5" style="margin:auto; bottom: 20px">
+                                                                <input class="form-control" type="text" id="Zen205" aria-label="Zen205" aria-describedby="basic-addon1" onkeypress='validate(event)'>
+                                                            </div>
+                                                            <div class="col-md-1">
+                                                                <label for="PrivateKey" style="margin:auto">$</label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-5 col-sm-5 col-lg-5 row">
+                                                    <div class="col-md-3">
+                                                        <input class="col-md-3" type="checkbox" id="checkboxsex208" />&emsp;<label for="PrivateKey" style="margin:auto">Cái</label>
+                                                    </div>
+                                                    <div class="col-md-9">
+                                                        <div class="form-group row">
+                                                            <div class="col-md-5">
+                                                                <input class="col-md-3" type="checkbox" id="checkboxsex209" />&emsp;<label for="PrivateKey" style="margin:auto">0/5</label>
+                                                            </div>
+                                                            <div class="col-md-5" style="margin:auto; bottom: 20px">
+                                                                <input class="form-control" type="text" id="Zen206" aria-label="Zen206" aria-describedby="basic-addon1" onkeypress='validate(event)'>
+                                                            </div>
+                                                            <div class="col-md-1">
+                                                                <label for="PrivateKey" style="margin:auto">$</label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group row">
+                                                            <div class="col-md-5">
+                                                                <input class="col-md-3" type="checkbox" id="checkboxsex210" />&emsp;<label for="PrivateKey" style="margin:auto">1/5</label>
+                                                            </div>
+                                                            <div class="col-md-5" style="margin:auto; bottom: 20px">
+                                                                <input class="form-control" type="text" id="Zen207" aria-label="Zen207" aria-describedby="basic-addon1" onkeypress='validate(event)'>
+                                                            </div>
+                                                            <div class="col-md-1">
+                                                                <label for="PrivateKey" style="margin:auto">$</label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group row">
+                                                            <div class="col-md-5">
+                                                                <input class="col-md-3" type="checkbox" id="checkboxsex211" />&emsp;<label for="PrivateKey" style="margin:auto">2/5</label>
+                                                            </div>
+                                                            <div class="col-md-5" style="margin:auto; bottom: 20px">
+                                                                <input class="form-control" type="text" id="Zen208" aria-label="Zen208" aria-describedby="basic-addon1" onkeypress='validate(event)'>
+                                                            </div>
+                                                            <div class="col-md-1">
+                                                                <label for="PrivateKey" style="margin:auto">$</label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group row">
+                                                            <div class="col-md-5">
+                                                                <input class="col-md-3" type="checkbox" id="checkboxsex212" />&emsp;<label for="PrivateKey" style="margin:auto">3/5</label>
+                                                            </div>
+                                                            <div class="col-md-5" style="margin:auto; bottom: 20px">
+                                                                <input class="form-control" type="text" id="Zen209" aria-label="Zen209" aria-describedby="basic-addon1" onkeypress='validate(event)'>
+                                                            </div>
+                                                            <div class="col-md-1">
+                                                                <label for="PrivateKey" style="margin:auto">$</label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group row">
+                                                            <div class="col-md-5">
+                                                                <input class="col-md-3" type="checkbox" id="checkboxsex213" />&emsp;<label for="PrivateKey" style="margin:auto">4/5</label>
+                                                            </div>
+                                                            <div class="col-md-5" style="margin:auto; bottom: 20px">
+                                                                <input class="form-control" type="text" id="Zen210" aria-label="Zen210" aria-describedby="basic-addon1" onkeypress='validate(event)'>
+                                                            </div>
+                                                            <div class="col-md-1">
+                                                                <label for="PrivateKey" style="margin:auto">$</label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group row">
+                                                            <div class="col-md-5">
+                                                                <input class="col-md-3" type="checkbox" id="checkboxsex214" />&emsp;<label for="PrivateKey" style="margin:auto">5/5</label>
+                                                            </div>
+                                                            <div class="col-md-5" style="margin:auto; bottom: 20px">
+                                                                <input class="form-control" type="text" id="Zen211" aria-label="Zen211" aria-describedby="basic-addon1" onkeypress='validate(event)'>
+                                                            </div>
+                                                            <div class="col-md-1">
+                                                                <label for="PrivateKey" style="margin:auto">$</label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <div class="card-header" id="heading4">
+                                        <button class="btn collapsed" type="button" data-toggle="collapse" data-target="#collapse4" aria-expanded="false" aria-controls="collapse4">
+                                            <i class="fa fa-plus"></i>&emsp;Epic
+                                        </button>
+                                    </div>
+                                    <div id="collapse4" class="collapse" aria-labelledby="heading4" data-parent="#accordionExample">
+                                        <div class="card-body">
+                                            <div class="form-group row">
+                                                <div class="col-md-7 row">
+                                                    <div class="col-md-5">
+                                                    </div>
+                                                    <div class="col-md-7 text-center">
+                                                        <label>Giá</label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-5 row">
+                                                    <div class="col-md-5">
+                                                    </div>
+                                                    <div class="col-md-7 text-center">
+                                                        <label>Giá</label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-7 col-sm-7 col-lg-7 row">
+                                                    <div class="col-md-5 row">
+                                                        <div class="col-md-7">
+                                                            <input type="checkbox" id="checkbox300" />&emsp;<label style="margin: auto" for="PrivateKey">Epic</label>
+                                                        </div>
+                                                        <div class="col-md-5">
+                                                            <input class="col-md-3" type="checkbox" id="checkboxsex301" />&emsp;<label for="PrivateKey" style="margin:auto">Đực</label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-7">
+                                                        <div class="form-group row">
+                                                            <div class="col-md-5">
+                                                                <input class="col-md-3" type="checkbox" id="checkboxsex302" />&emsp;<label for="PrivateKey" style="margin:auto">0/5</label>
+                                                            </div>
+                                                            <div class="col-md-5" style="margin:auto; bottom: 20px">
+                                                                <input class="form-control" type="text" id="Zen300" aria-label="Zen300" aria-describedby="basic-addon1" onkeypress='validate(event)'>
+                                                            </div>
+                                                            <div class="col-md-1">
+                                                                <label for="PrivateKey" style="margin:auto">$</label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group row">
+                                                            <div class="col-md-5">
+                                                                <input class="col-md-3" type="checkbox" id="checkboxsex303" />&emsp;<label for="PrivateKey" style="margin:auto">1/5</label>
+                                                            </div>
+                                                            <div class="col-md-5" style="margin:auto; bottom: 20px">
+                                                                <input class="form-control" type="text" id="Zen301" aria-label="Zen301" aria-describedby="basic-addon1" onkeypress='validate(event)'>
+                                                            </div>
+                                                            <div class="col-md-1">
+                                                                <label for="PrivateKey" style="margin:auto">$</label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group row">
+                                                            <div class="col-md-5">
+                                                                <input class="col-md-3" type="checkbox" id="checkboxsex304" />&emsp;<label for="PrivateKey" style="margin:auto">2/5</label>
+                                                            </div>
+                                                            <div class="col-md-5" style="margin:auto; bottom: 20px">
+                                                                <input class="form-control" type="text" id="Zen302" aria-label="Zen302" aria-describedby="basic-addon1" onkeypress='validate(event)'>
+                                                            </div>
+                                                            <div class="col-md-1">
+                                                                <label for="PrivateKey" style="margin:auto">$</label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group row">
+                                                            <div class="col-md-5">
+                                                                <input class="col-md-3" type="checkbox" id="checkboxsex305" />&emsp;<label for="PrivateKey" style="margin:auto">3/5</label>
+                                                            </div>
+                                                            <div class="col-md-5" style="margin:auto; bottom: 20px">
+                                                                <input class="form-control" type="text" id="Zen303" aria-label="Zen303" aria-describedby="basic-addon1" onkeypress='validate(event)'>
+                                                            </div>
+                                                            <div class="col-md-1">
+                                                                <label for="PrivateKey" style="margin:auto">$</label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group row">
+                                                            <div class="col-md-5">
+                                                                <input class="col-md-3" type="checkbox" id="checkboxsex306" />&emsp;<label for="PrivateKey" style="margin:auto">4/5</label>
+                                                            </div>
+                                                            <div class="col-md-5" style="margin:auto; bottom: 20px">
+                                                                <input class="form-control" type="text" id="Zen304" aria-label="Zen304" aria-describedby="basic-addon1" onkeypress='validate(event)'>
+                                                            </div>
+                                                            <div class="col-md-1">
+                                                                <label for="PrivateKey" style="margin:auto">$</label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group row">
+                                                            <div class="col-md-5">
+                                                                <input class="col-md-3" type="checkbox" id="checkboxsex307" />&emsp;<label for="PrivateKey" style="margin:auto">5/5</label>
+                                                            </div>
+                                                            <div class="col-md-5" style="margin:auto; bottom: 20px">
+                                                                <input class="form-control" type="text" id="Zen305" aria-label="Zen305" aria-describedby="basic-addon1" onkeypress='validate(event)'>
+                                                            </div>
+                                                            <div class="col-md-1">
+                                                                <label for="PrivateKey" style="margin:auto">$</label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-5 col-sm-5 col-lg-5 row">
+                                                    <div class="col-md-3">
+                                                        <input class="col-md-3" type="checkbox" id="checkboxsex308" />&emsp;<label for="PrivateKey" style="margin:auto">Cái</label>
+                                                    </div>
+                                                    <div class="col-md-9">
+                                                        <div class="form-group row">
+                                                            <div class="col-md-5">
+                                                                <input class="col-md-3" type="checkbox" id="checkboxsex309" />&emsp;<label for="PrivateKey" style="margin:auto">0/5</label>
+                                                            </div>
+                                                            <div class="col-md-5" style="margin:auto; bottom: 20px">
+                                                                <input class="form-control" type="text" id="Zen306" aria-label="Zen306" aria-describedby="basic-addon1" onkeypress='validate(event)'>
+                                                            </div>
+                                                            <div class="col-md-1">
+                                                                <label for="PrivateKey" style="margin:auto">$</label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group row">
+                                                            <div class="col-md-5">
+                                                                <input class="col-md-3" type="checkbox" id="checkboxsex310" />&emsp;<label for="PrivateKey" style="margin:auto">1/5</label>
+                                                            </div>
+                                                            <div class="col-md-5" style="margin:auto; bottom: 20px">
+                                                                <input class="form-control" type="text" id="Zen307" aria-label="Zen307" aria-describedby="basic-addon1" onkeypress='validate(event)'>
+                                                            </div>
+                                                            <div class="col-md-1">
+                                                                <label for="PrivateKey" style="margin:auto">$</label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group row">
+                                                            <div class="col-md-5">
+                                                                <input class="col-md-3" type="checkbox" id="checkboxsex311" />&emsp;<label for="PrivateKey" style="margin:auto">2/5</label>
+                                                            </div>
+                                                            <div class="col-md-5" style="margin:auto; bottom: 20px">
+                                                                <input class="form-control" type="text" id="Zen308" aria-label="Zen308" aria-describedby="basic-addon1" onkeypress='validate(event)'>
+                                                            </div>
+                                                            <div class="col-md-1">
+                                                                <label for="PrivateKey" style="margin:auto">$</label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group row">
+                                                            <div class="col-md-5">
+                                                                <input class="col-md-3" type="checkbox" id="checkboxsex312" />&emsp;<label for="PrivateKey" style="margin:auto">3/5</label>
+                                                            </div>
+                                                            <div class="col-md-5" style="margin:auto; bottom: 20px">
+                                                                <input class="form-control" type="text" id="Zen309" aria-label="Zen309" aria-describedby="basic-addon1" onkeypress='validate(event)'>
+                                                            </div>
+                                                            <div class="col-md-1">
+                                                                <label for="PrivateKey" style="margin:auto">$</label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group row">
+                                                            <div class="col-md-5">
+                                                                <input class="col-md-3" type="checkbox" id="checkboxsex313" />&emsp;<label for="PrivateKey" style="margin:auto">4/5</label>
+                                                            </div>
+                                                            <div class="col-md-5" style="margin:auto; bottom: 20px">
+                                                                <input class="form-control" type="text" id="Zen310" aria-label="Zen310" aria-describedby="basic-addon1" onkeypress='validate(event)'>
+                                                            </div>
+                                                            <div class="col-md-1">
+                                                                <label for="PrivateKey" style="margin:auto">$</label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group row">
+                                                            <div class="col-md-5">
+                                                                <input class="col-md-3" type="checkbox" id="checkboxsex314" />&emsp;<label for="PrivateKey" style="margin:auto">5/5</label>
+                                                            </div>
+                                                            <div class="col-md-5" style="margin:auto; bottom: 20px">
+                                                                <input class="form-control" type="text" id="Zen311" aria-label="Zen311" aria-describedby="basic-addon1" onkeypress='validate(event)'>
+                                                            </div>
+                                                            <div class="col-md-1">
+                                                                <label for="PrivateKey" style="margin:auto">$</label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <div class="card-header" id="heading5">
+                                        <button class="btn collapsed" type="button" data-toggle="collapse" data-target="#collapse5" aria-expanded="false" aria-controls="collapse5">
+                                            <i class="fa fa-plus"></i>&emsp;Lengend
+                                        </button>
+                                    </div>
+                                    <div id="collapse5" class="collapse" aria-labelledby="heading5" data-parent="#accordionExample">
+                                        <div class="card-body">
+                                            <div class="form-group row">
+                                                <div class="col-md-7 row">
+                                                    <div class="col-md-5">
+                                                    </div>
+                                                    <div class="col-md-7 text-center">
+                                                        <label>Giá</label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-5 row">
+                                                    <div class="col-md-5">
+                                                    </div>
+                                                    <div class="col-md-7 text-center">
+                                                        <label>Giá</label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-7 col-sm-7 col-lg-7 row">
+                                                    <div class="col-md-5 row">
+                                                        <div class="col-md-7">
+                                                            <input type="checkbox" id="checkbox400" />&emsp;<label style="margin: auto" for="PrivateKey">Lengend</label>
+                                                        </div>
+                                                        <div class="col-md-5">
+                                                            <input class="col-md-3" type="checkbox" id="checkboxsex401" />&emsp;<label for="PrivateKey" style="margin:auto">Đực</label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-7">
+                                                        <div class="form-group row">
+                                                            <div class="col-md-5">
+                                                                <input class="col-md-3" type="checkbox" id="checkboxsex402" />&emsp;<label for="PrivateKey" style="margin:auto">0/5</label>
+                                                            </div>
+                                                            <div class="col-md-5" style="margin:auto; bottom: 20px">
+                                                                <input class="form-control" type="text" id="Zen400" aria-label="Zen400" aria-describedby="basic-addon1" onkeypress='validate(event)'>
+                                                            </div>
+                                                            <div class="col-md-1">
+                                                                <label for="PrivateKey" style="margin:auto">$</label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group row">
+                                                            <div class="col-md-5">
+                                                                <input class="col-md-3" type="checkbox" id="checkboxsex403" />&emsp;<label for="PrivateKey" style="margin:auto">1/5</label>
+                                                            </div>
+                                                            <div class="col-md-5" style="margin:auto; bottom: 20px">
+                                                                <input class="form-control" type="text" id="Zen401" aria-label="Zen401" aria-describedby="basic-addon1" onkeypress='validate(event)'>
+                                                            </div>
+                                                            <div class="col-md-1">
+                                                                <label for="PrivateKey" style="margin:auto">$</label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group row">
+                                                            <div class="col-md-5">
+                                                                <input class="col-md-3" type="checkbox" id="checkboxsex404" />&emsp;<label for="PrivateKey" style="margin:auto">2/5</label>
+                                                            </div>
+                                                            <div class="col-md-5" style="margin:auto; bottom: 20px">
+                                                                <input class="form-control" type="text" id="Zen402" aria-label="Zen402" aria-describedby="basic-addon1" onkeypress='validate(event)'>
+                                                            </div>
+                                                            <div class="col-md-1">
+                                                                <label for="PrivateKey" style="margin:auto">$</label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group row">
+                                                            <div class="col-md-5">
+                                                                <input class="col-md-3" type="checkbox" id="checkboxsex405" />&emsp;<label for="PrivateKey" style="margin:auto">3/5</label>
+                                                            </div>
+                                                            <div class="col-md-5" style="margin:auto; bottom: 20px">
+                                                                <input class="form-control" type="text" id="Zen403" aria-label="Zen403" aria-describedby="basic-addon1" onkeypress='validate(event)'>
+                                                            </div>
+                                                            <div class="col-md-1">
+                                                                <label for="PrivateKey" style="margin:auto">$</label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group row">
+                                                            <div class="col-md-5">
+                                                                <input class="col-md-3" type="checkbox" id="checkboxsex406" />&emsp;<label for="PrivateKey" style="margin:auto">4/5</label>
+                                                            </div>
+                                                            <div class="col-md-5" style="margin:auto; bottom: 20px">
+                                                                <input class="form-control" type="text" id="Zen404" aria-label="Zen404" aria-describedby="basic-addon1" onkeypress='validate(event)'>
+                                                            </div>
+                                                            <div class="col-md-1">
+                                                                <label for="PrivateKey" style="margin:auto">$</label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group row">
+                                                            <div class="col-md-5">
+                                                                <input class="col-md-3" type="checkbox" id="checkboxsex407" />&emsp;<label for="PrivateKey" style="margin:auto">5/5</label>
+                                                            </div>
+                                                            <div class="col-md-5" style="margin:auto; bottom: 20px">
+                                                                <input class="form-control" type="text" id="Zen405" aria-label="Zen405" aria-describedby="basic-addon1" onkeypress='validate(event)'>
+                                                            </div>
+                                                            <div class="col-md-1">
+                                                                <label for="PrivateKey" style="margin:auto">$</label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-5 col-sm-5 col-lg-5 row">
+                                                    <div class="col-md-3">
+                                                        <input class="col-md-3" type="checkbox" id="checkboxsex408" />&emsp;<label for="PrivateKey" style="margin:auto">Cái</label>
+                                                    </div>
+                                                    <div class="col-md-9">
+                                                        <div class="form-group row">
+                                                            <div class="col-md-5">
+                                                                <input class="col-md-3" type="checkbox" id="checkboxsex409" />&emsp;<label for="PrivateKey" style="margin:auto">0/5</label>
+                                                            </div>
+                                                            <div class="col-md-5" style="margin:auto; bottom: 20px">
+                                                                <input class="form-control" type="text" id="Zen406" aria-label="Zen406" aria-describedby="basic-addon1" onkeypress='validate(event)'>
+                                                            </div>
+                                                            <div class="col-md-1">
+                                                                <label for="PrivateKey" style="margin:auto">$</label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group row">
+                                                            <div class="col-md-5">
+                                                                <input class="col-md-3" type="checkbox" id="checkboxsex410" />&emsp;<label for="PrivateKey" style="margin:auto">1/5</label>
+                                                            </div>
+                                                            <div class="col-md-5" style="margin:auto; bottom: 20px">
+                                                                <input class="form-control" type="text" id="Zen407" aria-label="Zen407" aria-describedby="basic-addon1" onkeypress='validate(event)'>
+                                                            </div>
+                                                            <div class="col-md-1">
+                                                                <label for="PrivateKey" style="margin:auto">$</label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group row">
+                                                            <div class="col-md-5">
+                                                                <input class="col-md-3" type="checkbox" id="checkboxsex411" />&emsp;<label for="PrivateKey" style="margin:auto">2/5</label>
+                                                            </div>
+                                                            <div class="col-md-5" style="margin:auto; bottom: 20px">
+                                                                <input class="form-control" type="text" id="Zen408" aria-label="Zen408" aria-describedby="basic-addon1" onkeypress='validate(event)'>
+                                                            </div>
+                                                            <div class="col-md-1">
+                                                                <label for="PrivateKey" style="margin:auto">$</label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group row">
+                                                            <div class="col-md-5">
+                                                                <input class="col-md-3" type="checkbox" id="checkboxsex412" />&emsp;<label for="PrivateKey" style="margin:auto">3/5</label>
+                                                            </div>
+                                                            <div class="col-md-5" style="margin:auto; bottom: 20px">
+                                                                <input class="form-control" type="text" id="Zen409" aria-label="Zen409" aria-describedby="basic-addon1" onkeypress='validate(event)'>
+                                                            </div>
+                                                            <div class="col-md-1">
+                                                                <label for="PrivateKey" style="margin:auto">$</label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group row">
+                                                            <div class="col-md-5">
+                                                                <input class="col-md-3" type="checkbox" id="checkboxsex413" />&emsp;<label for="PrivateKey" style="margin:auto">4/5</label>
+                                                            </div>
+                                                            <div class="col-md-5" style="margin:auto; bottom: 20px">
+                                                                <input class="form-control" type="text" id="Zen410" aria-label="Zen410" aria-describedby="basic-addon1" onkeypress='validate(event)'>
+                                                            </div>
+                                                            <div class="col-md-1">
+                                                                <label for="PrivateKey" style="margin:auto">$</label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group row">
+                                                            <div class="col-md-5">
+                                                                <input class="col-md-3" type="checkbox" id="checkboxsex414" />&emsp;<label for="PrivateKey" style="margin:auto">5/5</label>
+                                                            </div>
+                                                            <div class="col-md-5" style="margin:auto; bottom: 20px">
+                                                                <input class="form-control" type="text" id="Zen411" aria-label="Zen411" aria-describedby="basic-addon1" onkeypress='validate(event)'>
+                                                            </div>
+                                                            <div class="col-md-1">
+                                                                <label for="PrivateKey" style="margin:auto">$</label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <div class="card-header" id="heading6">
+                                        <button class="btn collapsed" type="button" data-toggle="collapse" data-target="#collapse6" aria-expanded="false" aria-controls="collapse5">
+                                            <i class="fa fa-plus"></i>&emsp;Mythic
+                                        </button>
+                                    </div>
+                                    <div id="collapse6" class="collapse" aria-labelledby="heading6" data-parent="#accordionExample">
+                                        <div class="card-body">
+                                            <div class="form-group row">
+                                                <div class="col-md-7 row">
+                                                    <div class="col-md-5">
+                                                    </div>
+                                                    <div class="col-md-7 text-center">
+                                                        <label>Giá</label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-5 row">
+                                                    <div class="col-md-5">
+                                                    </div>
+                                                    <div class="col-md-7 text-center">
+                                                        <label>Giá</label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-7 col-sm-7 col-lg-7 row">
+                                                    <div class="col-md-5 row">
+                                                        <div class="col-md-7">
+                                                            <input type="checkbox" id="checkbox500" />&emsp;<label style="margin: auto" for="PrivateKey">Mythic</label>
+                                                        </div>
+                                                        <div class="col-md-5">
+                                                            <input class="col-md-3" type="checkbox" id="checkboxsex501" />&emsp;<label for="PrivateKey" style="margin:auto">Đực</label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-7">
+                                                        <div class="form-group row">
+                                                            <div class="col-md-5">
+                                                                <input class="col-md-3" type="checkbox" id="checkboxsex502" />&emsp;<label for="PrivateKey" style="margin:auto">0/5</label>
+                                                            </div>
+                                                            <div class="col-md-5" style="margin:auto; bottom: 20px">
+                                                                <input class="form-control" type="text" id="Zen500" aria-label="Zen500" aria-describedby="basic-addon1" onkeypress='validate(event)'>
+                                                            </div>
+                                                            <div class="col-md-1">
+                                                                <label for="PrivateKey" style="margin:auto">$</label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group row">
+                                                            <div class="col-md-5">
+                                                                <input class="col-md-3" type="checkbox" id="checkboxsex503" />&emsp;<label for="PrivateKey" style="margin:auto">1/5</label>
+                                                            </div>
+                                                            <div class="col-md-5" style="margin:auto; bottom: 20px">
+                                                                <input class="form-control" type="text" id="Zen501" aria-label="Zen501" aria-describedby="basic-addon1" onkeypress='validate(event)'>
+                                                            </div>
+                                                            <div class="col-md-1">
+                                                                <label for="PrivateKey" style="margin:auto">$</label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group row">
+                                                            <div class="col-md-5">
+                                                                <input class="col-md-3" type="checkbox" id="checkboxsex504" />&emsp;<label for="PrivateKey" style="margin:auto">2/5</label>
+                                                            </div>
+                                                            <div class="col-md-5" style="margin:auto; bottom: 20px">
+                                                                <input class="form-control" type="text" id="Zen502" aria-label="Zen502" aria-describedby="basic-addon1" onkeypress='validate(event)'>
+                                                            </div>
+                                                            <div class="col-md-1">
+                                                                <label for="PrivateKey" style="margin:auto">$</label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group row">
+                                                            <div class="col-md-5">
+                                                                <input class="col-md-3" type="checkbox" id="checkboxsex505" />&emsp;<label for="PrivateKey" style="margin:auto">3/5</label>
+                                                            </div>
+                                                            <div class="col-md-5" style="margin:auto; bottom: 20px">
+                                                                <input class="form-control" type="text" id="Zen503" aria-label="Zen503" aria-describedby="basic-addon1" onkeypress='validate(event)'>
+                                                            </div>
+                                                            <div class="col-md-1">
+                                                                <label for="PrivateKey" style="margin:auto">$</label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group row">
+                                                            <div class="col-md-5">
+                                                                <input class="col-md-3" type="checkbox" id="checkboxsex506" />&emsp;<label for="PrivateKey" style="margin:auto">4/5</label>
+                                                            </div>
+                                                            <div class="col-md-5" style="margin:auto; bottom: 20px">
+                                                                <input class="form-control" type="text" id="Zen504" aria-label="Zen504" aria-describedby="basic-addon1" onkeypress='validate(event)'>
+                                                            </div>
+                                                            <div class="col-md-1">
+                                                                <label for="PrivateKey" style="margin:auto">$</label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group row">
+                                                            <div class="col-md-5">
+                                                                <input class="col-md-3" type="checkbox" id="checkboxsex507"/>&emsp;<label for="PrivateKey" style="margin:auto">5/5</label>
+                                                            </div>
+                                                            <div class="col-md-5" style="margin:auto; bottom: 20px">
+                                                                <input class="form-control" type="text" id="Zen505" aria-label="Zen505" aria-describedby="basic-addon1" onkeypress='validate(event)'>
+                                                            </div>
+                                                            <div class="col-md-1">
+                                                                <label for="PrivateKey" style="margin:auto">$</label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-5 col-sm-5 col-lg-5 row">
+                                                    <div class="col-md-3">
+                                                        <input class="col-md-3" type="checkbox" id="checkboxsex508"/>&emsp;<label for="PrivateKey" style="margin:auto">Cái</label>
+                                                    </div>
+                                                    <div class="col-md-9">
+                                                        <div class="form-group row">
+                                                            <div class="col-md-5">
+                                                                <input class="col-md-3" type="checkbox" id="checkboxsex509"/>&emsp;<label for="PrivateKey" style="margin:auto">0/5</label>
+                                                            </div>
+                                                            <div class="col-md-5" style="margin:auto; bottom: 20px">
+                                                                <input class="form-control" type="text" id="Zen506" aria-label="Zen506" aria-describedby="basic-addon1" onkeypress='validate(event)'>
+                                                            </div>
+                                                            <div class="col-md-1">
+                                                                <label for="PrivateKey" style="margin:auto">$</label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group row">
+                                                            <div class="col-md-5">
+                                                                <input class="col-md-3" type="checkbox" id="checkboxsex510"/>&emsp;<label for="PrivateKey" style="margin:auto">1/5</label>
+                                                            </div>
+                                                            <div class="col-md-5" style="margin:auto; bottom: 20px">
+                                                                <input class="form-control" type="text" id="Zen507" aria-label="Zen507" aria-describedby="basic-addon1" onkeypress='validate(event)'>
+                                                            </div>
+                                                            <div class="col-md-1">
+                                                                <label for="PrivateKey" style="margin:auto">$</label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group row">
+                                                            <div class="col-md-5">
+                                                                <input class="col-md-3" type="checkbox" id="checkboxsex511"/>&emsp;<label for="PrivateKey" style="margin:auto">2/5</label>
+                                                            </div>
+                                                            <div class="col-md-5" style="margin:auto; bottom: 20px">
+                                                                <input class="form-control" type="text" id="Zen508" aria-label="Zen508" aria-describedby="basic-addon1" onkeypress='validate(event)'>
+                                                            </div>
+                                                            <div class="col-md-1">
+                                                                <label for="PrivateKey" style="margin:auto">$</label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group row">
+                                                            <div class="col-md-5">
+                                                                <input class="col-md-3" type="checkbox" id="checkboxsex512"/>&emsp;<label for="PrivateKey" style="margin:auto">3/5</label>
+                                                            </div>
+                                                            <div class="col-md-5" style="margin:auto; bottom: 20px">
+                                                                <input class="form-control" type="text" id="Zen509" aria-label="Zen509" aria-describedby="basic-addon1" onkeypress='validate(event)'>
+                                                            </div>
+                                                            <div class="col-md-1">
+                                                                <label for="PrivateKey" style="margin:auto">$</label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group row">
+                                                            <div class="col-md-5">
+                                                                <input class="col-md-3" type="checkbox" id="checkboxsex513"/>&emsp;<label for="PrivateKey" style="margin:auto">4/5</label>
+                                                            </div>
+                                                            <div class="col-md-5" style="margin:auto; bottom: 20px">
+                                                                <input class="form-control" type="text" id="Zen510" aria-label="Zen510" aria-describedby="basic-addon1" onkeypress='validate(event)'>
+                                                            </div>
+                                                            <div class="col-md-1">
+                                                                <label for="PrivateKey" style="margin:auto">$</label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group row">
+                                                            <div class="col-md-5">
+                                                                <input class="col-md-3" type="checkbox" id="checkboxsex514"/>&emsp;<label for="PrivateKey" style="margin:auto">5/5</label>
+                                                            </div>
+                                                            <div class="col-md-5" style="margin:auto; bottom: 20px">
+                                                                <input class="form-control" type="text" id="Zen511" aria-label="Zen511" aria-describedby="basic-addon1" onkeypress='validate(event)'>
+                                                            </div>
+                                                            <div class="col-md-1">
+                                                                <label for="PrivateKey" style="margin:auto">$</label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="modal-footer" id="footer1">
+            <a>Trạng thái</a>
+            <button href="javascript:void(0);" class="btn btn-info" onclick="Start()">Bắt đầu</button>
+            <button href="javascript:void(0);" class="btn btn-secondary" onclick="Pause()" disabled>Tạm dừng</button>
+        </div>
+        <div class="modal-footer" id="footer2" style="display:none">
+            <a>Trạng thái</a>
+            <button href="javascript:void(0);" class="btn btn-info" onclick="Start()" disabled>Bắt đầu</button>
+            <button href="javascript:void(0);" class="btn btn-secondary" onclick="Pause()">Tạm dừng</button>
+        </div>
+    </div>
+</div>
+<script>
+    function validate(evt) {
+        var theEvent = evt || window.event;
+        // Handle paste
+        if (theEvent.type === 'paste') {
+            key = event.clipboardData.getData('text/plain');
+        } else {
+            // Handle key press
+            var key = theEvent.keyCode || theEvent.which;
+            key = String.fromCharCode(key);
+        }
+        var regex = /^[0-9]+$/;
+        if (!regex.test(key)) {
+            theEvent.returnValue = false;
+            if (theEvent.preventDefault) theEvent.preventDefault();
+        }
+    }
+</script>

@@ -1,0 +1,13 @@
+﻿#input-container {
+    position: relative;
+}
+
+    #input-container > i {
+        position: absolute;
+        top: 12px;
+        left: 15px;
+    }
+
+    #input-container > input {
+        padding-left: 40px;
+    }
