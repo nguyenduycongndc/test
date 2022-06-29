@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31624.102
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Administrative_Tool", "testPj\Administrative_Tool.csproj", "{CA5C1A4F-A000-43C1-BEB4-B27F786D4525}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Administrative_Tool", "Administrative_Tool\Administrative_Tool.csproj", "{CA5C1A4F-A000-43C1-BEB4-B27F786D4525}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
